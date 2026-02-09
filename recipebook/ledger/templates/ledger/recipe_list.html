@@ -1,6 +1,8 @@
-<h1>Recipe Book</h1>
+{% extends 'base.html' %}
+{% block content %}
 <ul>
     {% for recipe in recipes %}
         <li><a href="{{ recipe.link }}">{{ recipe.name }}</a></li>
     {% endfor %}
 </ul>
+{% endblock %}
