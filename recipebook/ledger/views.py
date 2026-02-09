@@ -36,10 +36,10 @@ def recipe_list(request):
 
 def recipe_1(request):
     # Pass only the first recipe's data
-    context = RECIPES_DATA["recipes"][0]
-    return render(request, 'recipe_detail.html', context)
+    context = RECIPES_CONTEXT["recipes"][0]
+    return render(request, 'ledger/recipe_detail.html', context)
 
 def recipe_2(request):
     # Pass only the second recipe's data
-    context = RECIPES_DATA["recipes"][1]
-    return render(request, 'recipe_detail.html', context)
+    context = RECIPES_CONTEXT["recipes"][1]
+    return render(request, 'ledger/recipe_detail.html', context)
