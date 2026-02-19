@@ -19,13 +19,3 @@ def recipe_detail(request, id):
 
 
 
-#def recipe_1(request):
-    # Pass only the first recipe's data
-  #  context = RECIPES_CONTEXT["recipes"][0]
-   # return render(request, 'ledger/recipe_detail.html', context)
-
-#def recipe_2(request):
-    # Pass only the second recipe's data
-  #  context = RECIPES_CONTEXT["recipes"][1]
- #   return render(request, 'ledger/recipe_detail.html', context)
-
