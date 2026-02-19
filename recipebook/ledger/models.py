@@ -19,7 +19,7 @@ class Recipe(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('recipe_detail', args=[str(self.name)])
+        return reverse('ledger:recipe_detail', kwargs={'id': self.id})
     
 
 
