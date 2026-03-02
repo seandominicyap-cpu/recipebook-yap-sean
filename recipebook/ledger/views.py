@@ -12,10 +12,8 @@ def recipe_list(request):
 
     return render(request, 'recipe_list.html', ctx)
 
+
 def recipe_detail(request, id):
-    ctx = {'recipe': Recipe.objects.get(id=id) }
+    ctx = {'recipe': Recipe.objects.get(id=id)}
 
     return render(request, 'recipe_detail.html', ctx)
-
-
-

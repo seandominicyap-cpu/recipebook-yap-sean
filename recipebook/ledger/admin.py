@@ -3,8 +3,10 @@ from .models import Recipe, Ingredient, RecipeIngredient
 
 # Register your models here.
 
+
 class RecipeIngredientInline(admin.TabularInline):
     model = RecipeIngredient
+
 
 class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
@@ -15,6 +17,3 @@ class RecipeAdmin(admin.ModelAdmin):
 
 admin.site.register(Recipe, RecipeAdmin)
 admin.site.register(Ingredient)
-
-
-

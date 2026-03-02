@@ -1,7 +1,10 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Create your models here.
+
+
 class Ingredient(models.Model):
     name = models.CharField(max_length=255)
 
@@ -17,10 +20,9 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def get_absolute_url(self):
         return reverse('ledger:recipe_detail', kwargs={'id': self.id})
-    
 
 
 class RecipeIngredient(models.Model):
@@ -29,9 +31,15 @@ class RecipeIngredient(models.Model):
         Ingredient,
         on_delete=models.CASCADE,
         related_name="recipe")
-    
+
     recipe = models.ForeignKey(
-        Recipe, 
+        Recipe,
         on_delete=models.CASCADE,
-        related_name = "ingredients"
+        related_name="ingredients"
     )
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    bio = models.TextField(blank=True)
