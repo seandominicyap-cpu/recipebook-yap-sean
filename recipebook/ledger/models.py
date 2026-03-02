@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.core.validators import MinLengthValidator
 
 # Create your models here.
 
@@ -8,7 +9,7 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
-    bio = models.TextField(blank=True)
+    bio = models.TextField(blank=True, validators=[MinLengthValidator(256)])
 
     def __str__(self):
         return self.name

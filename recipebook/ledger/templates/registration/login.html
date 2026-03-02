@@ -3,10 +3,10 @@
 {% block heading_text %}Login{% endblock %}
 
 {% block content %}
-    <form method="POST"> [cite: 845]
-        {% csrf_token %} [cite: 846]
-        {{ form.as_p }} [cite: 847]
-        <button type="submit">Login</button> [cite: 848]
+    <form method="POST"> 
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        <button type="submit">Login</button> 
     </form>
     
     <p><a href="{% url 'password_reset' %}">Forgot password?</a></p>
