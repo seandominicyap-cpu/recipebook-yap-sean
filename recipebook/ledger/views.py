@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .models import Recipe
 
@@ -13,7 +14,9 @@ def recipe_list(request):
     return render(request, 'recipe_list.html', ctx)
 
 
+@login_required
 def recipe_detail(request, id):
-    ctx = {'recipe': Recipe.objects.get(id=id)}
+    ctx = {'recipe': Recipe.objects.get(id=id)
+           }
 
     return render(request, 'recipe_detail.html', ctx)
