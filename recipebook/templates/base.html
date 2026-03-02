@@ -10,7 +10,7 @@
         <nav>
 
             {% if user.is_authenticated %}
-                <form method="POST" action = "{% url 'logout'}">
+                <form method="POST" action = "{% url 'logout'%}">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button type="submit">Logout</button>
