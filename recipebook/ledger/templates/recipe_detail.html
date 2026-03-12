@@ -26,3 +26,7 @@
 
 <p><a href="{% url 'ledger:recipe_list' %}">Back to list</a></p>
 {% endblock %}
+
+{% if user.is_authenticated %}
+    <p><a href="{% url 'ledger:add_image' pk=recipe.pk %}">Upload New Image</a></p>
+{% endif %}

@@ -30,3 +30,16 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     fields = '__all__'
     template_name = 'recipe_form.html'
     success_url = reverse_lazy('ledger:recipe_list')
+
+
+class RecipeImageCreateView(loginRequiredMixin, CreateView):
+    model = RecipeImage
+    fields = ['image', 'description']
+    template_name = 'recipe_image_form.html'
+
+    def form_valid(self, form):
+        form.instance.recipe_id = self.kwargs['pk']
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('ledget:recipe_detail', kwargs={'id': self.kwargs['pk']})
