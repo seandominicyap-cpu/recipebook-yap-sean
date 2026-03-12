@@ -3,7 +3,8 @@ from . import views
 
 app_name = "ledger"
 urlpatterns = [
-    path('', views.recipe_list, name='recipe_list'),
+    path('', views.recipe_list, name='index'),
+    path('recipes/list', views.recipe_list, name='recipe_list'),
     path('recipe/<int:id>', views.recipe_detail, name='recipe_detail'),
 
 ]
