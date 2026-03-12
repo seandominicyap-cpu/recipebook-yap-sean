@@ -32,7 +32,7 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('ledger:recipe_list')
 
 
-class RecipeImageCreateView(loginRequiredMixin, CreateView):
+class RecipeImageCreateView(LoginRequiredMixin, CreateView):
     model = RecipeImage
     fields = ['image', 'description']
     template_name = 'recipe_image_form.html'
