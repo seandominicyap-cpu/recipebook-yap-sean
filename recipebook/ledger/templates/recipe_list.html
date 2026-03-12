@@ -7,8 +7,9 @@
         <li><a href="{{ recipe.get_absolute_url }}">{{ recipe.name }}</a></li>
     {% endfor %}
 </ul>
-{% endblock %}
-
 {% if user.is_authenticated %}
     <p><a href="{% url 'ledger:recipe_add' %}">Create New Recipe</a></p>
 {% endif %}
+
+{% endblock %}
+
