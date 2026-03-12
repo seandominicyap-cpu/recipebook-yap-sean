@@ -42,4 +42,4 @@ class RecipeImageCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('ledget:recipe_detail', kwargs={'id': self.kwargs['pk']})
+        return reverse_lazy('ledger:recipe_detail', kwargs={'id': self.kwargs['pk']})
