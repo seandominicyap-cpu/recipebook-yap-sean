@@ -5,10 +5,24 @@
 
 {% block content %}
 <h3>Author: {{ recipe.author.name }}</h3>
+
+<div class = "recipe-images">
+    {% for img in recipe.images.all %}
+        <img src="{{ img.image.url }}" alt="{{ img.description }}" style="max-width: 300px;">
+        <p><em>{{img.description}}</em></p>
+    {% endfor %}
+    </div>
     <ul>
         {% for ingredient in recipe.ingredients.all %}
             <li>{{ ingredient.ingredient.name }} ({{ ingredient.quantity }})</li>
         {% endfor %}
     </ul>
+
+    {% if user.is_authenticated %}
+        <p>
+            <a href="{% url 'ledger:add_image' pk=recipe.pk %}" class="btn">Upload New Image</a>
+        </p>
+    {% endif %}
+
 <p><a href="{% url 'ledger:recipe_list' %}">Back to list</a></p>
 {% endblock %}
