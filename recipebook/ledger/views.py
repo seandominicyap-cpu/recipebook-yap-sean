@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from .models import Recipe
+from .models import Recipe, RecipeImage
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
